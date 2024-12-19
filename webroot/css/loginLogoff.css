@@ -1,0 +1,376 @@
+
+/* 
+    Created on : 3 dic 2024, 12:36:31
+    Author     : daw2
+*/
+
+/*------GENERAL------*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+
+header{
+    background-color: #131921; 
+    display: flex;    
+}
+h1{
+    text-align: center;
+    font-size: 500%;
+    background-color: #131921;    
+    color: white;  
+    padding: 2% 0px;   
+    width: 60%;
+    margin-left: 23%;
+}
+
+#logo{
+        position: absolute;    
+        border-radius: 10px;
+        left: 5%; 
+        top: 5%;
+        width: 8%;
+        height: 8%;
+}
+
+ body{                              
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;                
+    height: 100%;        
+}
+
+footer{
+    display: flex;
+    flex-direction: row;                 
+    justify-content: center;
+    background-color: #232F3E;
+    font-size: 140%;       
+}
+
+
+footer p{
+    text-align: center;                
+    width: fit-content;   
+    margin: 2% 1.5%;                          
+}
+
+footer a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer p:hover{
+    text-decoration: underline;  
+    color: white;
+}
+
+
+
+
+
+
+/*------indexLoginLogoffTema5------*/
+
+
+#index form{
+    height: 100%;
+    width: 15%;    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 1%;
+    input{
+        border: none;
+        background-color: #131921;
+        color: white;
+        font-size: 110%;
+    }
+    input:hover{
+        color: #c97923;
+        text-decoration: underline;
+    }
+}
+
+.dropdown{
+    color: white;    
+    height: 10%;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;  
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);    
+  background-color: #131921; 
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+}
+
+#index button{
+    border: none;
+    margin: 5px auto;
+}
+
+#index main{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;     
+    height: 110%;  
+    width: 100%;
+    align-items: center;                    
+    
+    background-repeat: no-repeat;
+    background-size: 70% 100%;
+    background-position: center;
+    #imagen{
+        heigth: 100%;
+        width: 100%;
+        background-image: url("/204DWESLoginLogoffTema6/webroot/images/portada.PNG");
+    }
+}
+
+
+
+/*------Login------*/
+
+#login h1{
+    text-align: center;
+    font-size: 500%;
+    background-color: #131921;    
+    color: white;  
+    padding: 2% 0px;   
+    width: 100%;
+    margin-left: 0;
+}
+
+#login header form{
+    height: 12%;
+    width: 1.7%;
+    position: absolute;
+    right: 7%;
+    top: 8%;
+    input{
+        border: none;
+        background-color: #131921;
+        color: white;
+        font-size: 110%;
+        
+    }
+    input:hover{
+        color: #c97923;
+        text-decoration: underline;
+    }
+}
+
+#login header #logo{
+        position: absolute;    
+        border-radius: 10px;
+        left: 5%; 
+        top: 5%;
+        width: 8%;
+        height: 8%;
+    }
+
+
+#login main{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1% auto;    
+    height: 110%;    
+    width: 80%;
+    align-items: center;        
+}
+
+#login main form{
+    width: 20%;
+    height: 100%;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    
+    
+    input{    
+        margin-top: 1%;
+        margin-bottom: 10%;
+        height: 6%;
+        
+    }
+    
+    input:focus{
+        box-shadow: 0px 0px 2px 2px blue;
+    }
+    
+    #login{
+        width: 70%;
+        align-self: center;
+        background-color: #FFD814; 
+        border: none;
+        padding: 7px;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+    #login:hover{
+        background-color: #F7CA00;
+    }
+}
+
+
+/*------Programa------*/
+
+#programa header{    
+    p{
+        color: white;        
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        width: 20%;
+        margin-left: 41%;
+    }
+    img{
+        height: 35px;
+        width: 60px;
+    }
+    #logo{
+        position: absolute;    
+        border-radius: 10px;
+        left: 5%; 
+        top: 5%;
+        width: 8%;
+        height: 8%;
+    }
+}
+
+
+
+#programa form{
+    height: 100%;
+    width: 14.7%;    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+    input{
+        border: none;
+        background-color: #131921;
+        color: white;
+        font-size: 110%;
+        padding: 3px;
+    }
+    input:hover{
+        color: #c97923;
+        text-decoration: underline;
+    }
+}
+
+#programa body{                              
+    background-color: #E3E6E6;
+}
+
+#programa main{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1% auto;       
+    height: 110%;      
+    align-items: center;    
+    border-radius: 9%;    
+    width: 100%;  
+}
+
+#programa main p{
+    text-align: center;
+    margin: 0 auto;
+    background-color: white;
+    width: 40%;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px #888888;
+}
+
+
+/*------Detalle------*/
+
+#detalle header{    
+    p{
+        color: white;        
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 4%;
+        
+    }
+    h1{
+        width: 15%;
+        margin-left: 43%;
+        
+    }
+    img{
+        height: 35px;
+        width: 60px;       
+    }
+    #logo{
+        position: absolute;    
+        border-radius: 10px;
+        left: 5%; 
+        top: 5%;
+        width: 8%;
+        height: 8%;
+    }
+}
+
+#detalle form{    
+    display: flex;
+    justify-cotent: space-around;
+    margin-left: 5%;
+    input{
+        border: none;
+        background-color: #131921;
+        color: white;
+        font-size: 110%;
+    }
+    input:hover{
+        color: #c97923;
+        text-decoration: underline;
+    }
+}
+
+#detalle table{
+    margin: 0 auto;
+    margin-bottom: 2%;
+    width: 60%;
+}
+
+#detalle table, #detalle td, #detalle tr{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#detalle td:nth-of-type(odd){
+    background-color: #E3E6E6;
+    font-weight: bold;
+}
+
+#detalle main p{
+    width: fit-content;
+    margin: 0 auto;
+}
