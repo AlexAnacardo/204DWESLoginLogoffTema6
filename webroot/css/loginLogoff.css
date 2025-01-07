@@ -78,7 +78,7 @@ footer p:hover{
 /*------indexLoginLogoffTema5------*/
 
 
-#index form{
+#index header form{
     height: 100%;
     width: 15%;    
     display: flex;
@@ -136,88 +136,47 @@ footer p:hover{
     
     background-repeat: no-repeat;
     background-size: 70% 100%;
-    background-position: center;
-    #imagen{
-        heigth: 100%;
-        width: 100%;
-        background-image: url("/204DWESLoginLogoffTema6/webroot/images/portada.PNG");
-    }
+    background-position: center;    
 }
 
-
+#imagen{
+    height: 100%;
+    width: 100%;
+    background-image: url("/204DWESLoginLogoffTema6/webroot/images/portada.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 /*------Login------*/
 
-#login h1{
-    text-align: center;
-    font-size: 500%;
-    background-color: #131921;    
-    color: white;  
-    padding: 2% 0px;   
+#login{
     width: 100%;
-    margin-left: 0;
+    height: 100%;
 }
 
-#login header form{
-    height: 12%;
-    width: 1.7%;
-    position: absolute;
-    right: 7%;
-    top: 8%;
-    input{
-        border: none;
-        background-color: #131921;
-        color: white;
-        font-size: 110%;
-        
-    }
-    input:hover{
-        color: #c97923;
-        text-decoration: underline;
-    }
-}
-
-#login header #logo{
-        position: absolute;    
-        border-radius: 10px;
-        left: 5%; 
-        top: 5%;
-        width: 8%;
-        height: 8%;
-    }
-
-
-#login main{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1% auto;    
-    height: 110%;    
-    width: 80%;
-    align-items: center;        
-}
-
-#login main form{
+#login form{
     width: 20%;
     height: 100%;
-    margin: 0 auto;
-    
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
-    
+    justify-content: center;        
+    margin: 0 auto;
     
     input{    
         margin-top: 1%;
         margin-bottom: 10%;
         height: 6%;
-        
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid gray;
+        color: black;
     }
     
     input:focus{
         box-shadow: 0px 0px 2px 2px blue;
     }
     
-    #login{
+    #botonLogin{
         width: 70%;
         align-self: center;
         background-color: #FFD814; 
@@ -226,7 +185,7 @@ footer p:hover{
         border-radius: 10px;
         box-shadow: none;
     }
-    #login:hover{
+    #botonLogin:hover{
         background-color: #F7CA00;
     }
 }
@@ -341,7 +300,7 @@ footer p:hover{
 
 #detalle form{    
     display: flex;
-    justify-cotent: space-around;
+    justify-content: space-around;
     margin-left: 5%;
     input{
         border: none;

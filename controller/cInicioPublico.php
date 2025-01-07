@@ -1,10 +1,10 @@
 <?php
-    // Comprobamos si pulsa el botón login
+    // Comprobamos si pulsa el botón login    
     if (isset($_REQUEST['login'])) {
-        $_SESSION['paginaActiva'] = 'login';
-        header('Location: indexLoginLogoffTema6.php');
-        exit();
+        require_once $controller[$_SESSION['paginaEnCurso']];
+        $_SESSION['paginaEnCurso'] = 'login';         
     }
 
     require_once $view['layout'];
+    
 ?>

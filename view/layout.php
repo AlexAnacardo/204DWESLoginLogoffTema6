@@ -7,23 +7,17 @@
     $oFechaActual=new DateTime("now");
     if(!isset($_COOKIE['Idioma'])){
         setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");     
-        header('location:indexLoginLogoffTema5.php');
+        header('location:indexLoginLogoffTema6.php');
     }
-    
-    
-    if(isset($_REQUEST['login'])){
-       header('location:codigoPHP/login.php');
-       exit;
-    }
-            
+              
     if(isset($_REQUEST['español'])){        
         setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");
-        header('location:indexLoginLogoffTema5.php');
+        header('location:indexLoginLogoffTema6.php');
     }
     
     if(isset($_REQUEST['ingles'])){       
        setcookie('Idioma', 'en', $oFechaActual->getTimestamp()+(3600), "/"); 
-       header('location:indexLoginLogoffTema5.php');       
+       header('location:indexLoginLogoffTema6.php');       
     }
 ?>
 
@@ -72,7 +66,7 @@
             </form>
         </header>
         <main>
-            <?php require_once $view[$_SESSION['paginaActiva']]; ?>
+            <?php require_once $view[$_SESSION['paginaEnCurso']]; ?>
         </main>
         <footer>
             <p><a href="../index.html">Alex Asensio Sanchez</a></p>
