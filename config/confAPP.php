@@ -1,4 +1,7 @@
 <?php
+require_once 'model/Usuario.php';
+require_once 'model/UsuarioDB.php';
+require_once 'model/UsuarioPDO.php';
 
 $controller=[
     'inicioPublico' => 'controller/cInicioPublico.php',
@@ -9,7 +12,7 @@ $controller=[
 $view=[
     'layout' => 'view/layout.php',
     'inicioPublico' => 'view/vInicioPublico.php',
-    'inicioPrivado' => 'view/vInicioPriado.php',
+    'inicioPrivado' => 'view/vInicioPrivado.php',
     'login' => 'view/vLogin.php'
 ];
 
