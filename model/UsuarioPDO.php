@@ -3,9 +3,26 @@
      * @version 2024/12/19
      * @author Alex Asensio Sanchez                          
      */
-
-     class UsuarioPDO implements UsuarioDB{
-         
+    
+    /**
+     * Clase UsuarioPDO que implementa la interfaz UsuarioDB
+     * 
+     * Esta clase se usará para conectarse a la base de datos y trabajar en la tabla T01_Usuario     
+     */
+    class UsuarioPDO implements UsuarioDB{
+    
+    /**
+     * Valida un usuario en la base de datos
+     * 
+     * Primero, establecemos la conexion usando las variables constantes definidas en el archivo confAPP.php, despues codificamos la contraseña (que consiste de
+     * el codigo del usuario + su contraseña) en sha 256, preparamos el query que buscara si existe un usuario con el codigo y la contraseña especificados.
+     * Se ejecuta la sentencia y se guarda el resultado en un objeto, si el valor de este objeto es valido, actualiza el numero total de conexiones
+     * del usuario en la base de datos y devuelve el objeto con los datos del usuario. Si el valor del resultado de la consulta esta vacio, se devopvera null
+     *      
+     * @param string $codUsuario Código del usuario
+     * @param string $password Contraseña del usuario
+     * @return object|null Objeto del usuario si es válido, null en caso contrario
+     */
     public static function validarUsuario($codUsuario, $password) {
         try {
             //Se establece la conexion

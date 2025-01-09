@@ -5,7 +5,8 @@
      */
     $oUsuarioEnCurso=$_SESSION["usuarioDAW204LoginLogoffTema6"];
     $oFechaActual=new DateTime("now");
-
+    
+    
     if(!isset($_COOKIE['Idioma'])){
         setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/"); 
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
@@ -32,13 +33,14 @@
        header('location:detalle.php');
        exit;
     }
+    */
     
     if(isset($_REQUEST['logoff'])){
-       unset($_SESSION["usuarioDAW204LoginLogoffTema6"]);
-       header('location:../indexLoginLogoffTema6.php');
+       session_destroy();       
+       header('location: indexLoginLogoffTema6.php');       
        exit;
     }
-    
+    /*
     //Extraemos el usuario de la sesion y lo introducimos en una variable
     $oUsuarioEnCurso=$_SESSION["usuarioDAW204LoginLogoffTema6"];
     */   
