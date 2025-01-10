@@ -7,12 +7,13 @@
     $oFechaActual=new DateTime("now");
     
     
-    if(!isset($_COOKIE['Idioma'])){
+    if(!isset($_COOKIE['Idioma']) && isset($_SESSION['paginaEnCurso'])){        
         setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/"); 
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
         header('location:indexLoginLogoffTema6.php');
+             
     }
-               
+             
     if(isset($_REQUEST['español'])){        
         setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
@@ -20,7 +21,8 @@
     }
     
     if(isset($_REQUEST['ingles'])){       
-       setcookie('Idioma', 'en', $oFechaActual->getTimestamp()+(3600), "/"); 
+       setcookie('Idioma', 'en', $oFechaActual->getTimestamp()+(3600), "/");
+       $_SESSION['paginaEnCurso'] = 'inicioPrivado';
        header('location:indexLoginLogoffTema6.php');       
     }
     /*
@@ -44,6 +46,12 @@
     //Extraemos el usuario de la sesion y lo introducimos en una variable
     $oUsuarioEnCurso=$_SESSION["usuarioDAW204LoginLogoffTema6"];
     */   
-        
+    
+    $avInicioPrivado = [
+        'descUsuario' => $oUsuarioEnCurso->getDescUsuario(),
+        'numConexiones' => $oUsuarioEnCurso->getNumAccesos(),
+        'fechaHoraUltimaConexionAnterior' => $oUsuarioEnCurso->getFechaHoraUltimaConexion()
+    ];
+    
     require_once $view['layout'];
 ?>

@@ -56,6 +56,12 @@
             unset($miDB);
         }
     }
+    
+    public static function registrarUltimaConexion(){
+        RELLENAR
+    }
+    
+    
     /*
     public static altaUsuario(){
 
