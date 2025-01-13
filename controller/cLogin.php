@@ -32,18 +32,8 @@
     
     //Si no hay ningun usuario autenticado en esta sesion, se entrara aqui
     if(isset($_REQUEST['botonLogin'])){  
-        $resultadoConsulta=UsuarioPDO::validarUsuario($_REQUEST['nombre'], $_REQUEST['passwd']);
-        if($resultadoConsulta!=null){
-            
-            $oUsuarioEnCurso=new Usuario(
-                    $resultadoConsulta->T01_CodUsuario,
-                    $resultadoConsulta->T01_Password,
-                    $resultadoConsulta->T01_DescUsuario,
-                    $resultadoConsulta->T01_NumConexiones+1,
-                    date_format(new DateTime("now"), "Y-m-d h:m:s"),
-                    $resultadoConsulta->T01_FechaHoraUltimaConexion,
-                    $resultadoConsulta->T01_Perfil
-            );
+        $oUsuarioEnCurso=UsuarioPDO::validarUsuario($_REQUEST['nombre'], $_REQUEST['passwd']);
+        if($oUsuarioEnCurso!=null){                       
             //Guardamos el objeto usuario en la sesion actual
             $_SESSION["usuarioDAW204LoginLogoffTema6"] = $oUsuarioEnCurso;
             //Se nos redirecciona al programa            

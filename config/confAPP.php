@@ -2,6 +2,7 @@
 require_once 'model/Usuario.php';
 require_once 'model/UsuarioDB.php';
 require_once 'model/UsuarioPDO.php';
+require_once 'model/DBPDO.php';
 
 $controller=[
     'inicioPublico' => 'controller/cInicioPublico.php',

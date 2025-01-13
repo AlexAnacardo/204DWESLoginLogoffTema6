@@ -23,42 +23,47 @@
      * @param string $password Contraseña del usuario
      * @return object|null Objeto del usuario si es válido, null en caso contrario
      */
-    public static function validarUsuario($codUsuario, $password) {
-        try {
-            //Se establece la conexion
-            $miDB = new PDO(CONEXION, USUARIO, CONTRASEÑA);
+    public static function validarUsuario($codUsuario, $password) {        
+        //Concatenamos el usuario+la contraseña y lo codificamos con SHA256
+        $contraseñaCodificada = hash('sha256', $codUsuario . $password);
 
-            //Concatenamos el usuario+la contraseña y lo codificamos con SHA256
-            $contraseñaCodificada = hash('sha256', $codUsuario . $password);
+        $sentenciaSQL = <<< FIN
+                            select * from T01_Usuario where T01_CodUsuario= ? and T01_Password= ?
+                            FIN;
+        $parametros = [$codUsuario, $contraseñaCodificada];
 
-            //Solicitamos los datos del usuario          
-            $sql = $miDB->prepare(<<<FIN
-                                  select * from T01_Usuario where T01_CodUsuario='{$codUsuario}' and T01_Password= '{$contraseñaCodificada}'
-                                  FIN);
-            $sql->execute();
+        $sql = DBPDO::ejecutaConsulta($sentenciaSQL, $parametros);
 
-            //Guardamos el usuario en un objeto
-            $oUsuarioEnCurso = $sql->fetchObject();
+        //Guardamos el usuario en un objeto
+        $oResultado = $sql->fetchObject();
+        
+        if(isset($oResultado->T01_CodUsuario)){
+           $oUsuarioEnCurso = new Usuario(
+                $oResultado->T01_CodUsuario,
+                $oResultado->T01_Password,
+                $oResultado->T01_DescUsuario,
+                $oResultado->T01_NumConexiones,
+                date_format(new DateTime("now"), "Y-m-d h:m:s"),
+                $oResultado->T01_FechaHoraUltimaConexion,
+                $oResultado->T01_Perfil
+            );
             //Si la contraseña introducida por el usuario y la correspondiente en la base de datos son la misma, se entrara en el if
-            if (isset($oUsuarioEnCurso->T01_CodUsuario)) {
-                //Se actualizan el numero total de conexiones del usuario
-                $sql2 = $miDB->prepare("update T01_Usuario set T01_NumConexiones=T01_NumConexiones+1, T01_FechaHoraUltimaConexion=now() where T01_CodUsuario= ? ");
-                $sql2->execute([$codUsuario]);
-
+            if ($oUsuarioEnCurso) {
+                self::registrarUltimaConexion($oUsuarioEnCurso);
                 return $oUsuarioEnCurso;
-            }
-            else{
+            } else {
                 return null;
-            }
-        } catch (PDOException $ex) {
-            echo($ex->getMessage());
-        } finally {
-            unset($miDB);
-        }
+            } 
+        }        
     }
     
-    public static function registrarUltimaConexion(){
-        RELLENAR
+    public static function registrarUltimaConexion($oUsuario){
+        $miDB = new PDO(CONEXION, USUARIO, CONTRASEÑA);
+        //Se actualizan el numero total de conexiones del usuario
+        $sql2 = $miDB->prepare("update T01_Usuario set T01_NumConexiones=T01_NumConexiones+1, T01_FechaHoraUltimaConexion=now() where T01_CodUsuario= '{$oUsuario->getCodUsuario()}' ");
+        $sql2->execute();
+        
+        HACER ESTO CON EJECUTAR CONSULTA
     }
     
     
