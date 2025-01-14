@@ -1,22 +1,4 @@
 <?php
-
-    $oFechaActual=new DateTime("now");
-
-    if(!isset($_COOKIE['Idioma'])){
-        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");     
-        header('location:indexLoginLogoffTema6.php');
-    }
-               
-    if(isset($_REQUEST['español'])){        
-        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");
-        header('location:indexLoginLogoffTema6.php');
-    }
-    
-    if(isset($_REQUEST['ingles'])){       
-       setcookie('Idioma', 'en', $oFechaActual->getTimestamp()+(3600), "/"); 
-       header('location:indexLoginLogoffTema6.php');       
-    }
-    
     //Si el usuario ya se ha autenticado previamente y no ha cerrado el navegador, se entrara a la aplicacion directamente
     if(isset($_SESSION["usuarioDAW204LoginLogoffTema6"])){
         header('location:programa.php');

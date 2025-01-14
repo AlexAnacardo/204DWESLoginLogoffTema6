@@ -57,13 +57,10 @@
         }        
     }
     
-    public static function registrarUltimaConexion($oUsuario){
-        $miDB = new PDO(CONEXION, USUARIO, CONTRASEÑA);
-        //Se actualizan el numero total de conexiones del usuario
-        $sql2 = $miDB->prepare("update T01_Usuario set T01_NumConexiones=T01_NumConexiones+1, T01_FechaHoraUltimaConexion=now() where T01_CodUsuario= '{$oUsuario->getCodUsuario()}' ");
-        $sql2->execute();
-        
-        HACER ESTO CON EJECUTAR CONSULTA
+    public static function registrarUltimaConexion($oUsuario){       
+        $sentenciaSQL="update T01_Usuario set T01_NumConexiones=T01_NumConexiones+1, T01_FechaHoraUltimaConexion=now() where T01_CodUsuario= ? ";
+        $parametros=[$oUsuario->getCodUsuario()];
+        $sql= DBPDO::ejecutaConsulta($sentenciaSQL, $parametros);
     }
     
     

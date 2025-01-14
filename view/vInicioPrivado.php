@@ -1,6 +1,10 @@
 <header id="headerPrograma">
     <img id="logo" src="webroot/images/logo.png">
     <h1>Bienvenido</h1>
+    <p id="zonaUsuario"><img src="webroot/images/LogoUsuario.png"><?php echo($oUsuarioEnCurso->getDescUsuario()); ?></p>
+    
+                       
+    
     <form method='post'>                                                
         <div class='dropdown'>
             <?php
@@ -28,38 +32,45 @@
                 </button>                        
             </div>
         </div>
-        <input type="submit" name='logoff' id='logoff' value='Cerrar sesion'>
+        <input type="submit" name='volver' id='volver' value='Volver'>
+        <input type="submit" name='logoff' id='logoff' value='Cerrar sesion'>        
     </form>
 </header>
 <main id="programa">
-    <?php
+    <form>
+        <input type="submit" name='detalle' id='detalle' value='Detalle'>
+        <input type="submit" name='error' id='error' value='Error'>
+        <input type="submit" name='wip' id='wip' value='Work in progress'>
+    </form>
+    <div>
+        <?php        
+            switch ($_COOKIE['Idioma']) {
+                case 'es':
+                    if ($avInicioPrivado['numConexiones'] > 0) {
+                    ?>
+                        <p>Bienvenido <?php echo($avInicioPrivado['descUsuario']) ?>, esta es la  <?php echo $avInicioPrivado['numConexiones'] + 1 ?> vez que te conectas;
+                        usted se conectó por ultima vez el: <?php echo date_format(new DateTime($avInicioPrivado['fechaHoraUltimaConexionAnterior']), "d/m/Y H:i:s") ?></p>
+                    <?php
+                    } else {
+                    ?>
+                        <p>Bienvenido <?php echo($avInicioPrivado['descUsuario']) ?>, es la primera vez que te conectas</p>
+                    <?php
+                }
+                break;
 
-        switch ($_COOKIE['Idioma']) {
-            case 'es':
+            case 'en':
                 if ($avInicioPrivado['numConexiones'] > 0) {
-                ?>
-                    <p>Bienvenido <?php echo($avInicioPrivado['descUsuario']) ?>, esta es la  <?php echo $avInicioPrivado['numConexiones'] + 1 ?> vez que te conectas;
-                    usted se conectó por ultima vez el: <?php echo date_format(new DateTime($avInicioPrivado['fechaHoraUltimaConexionAnterior']), "d/m/Y H:i:s") ?></p>
-                <?php
-                } else {
-                ?>
-                    <p>Bienvenido <?php echo($avInicioPrivado['descUsuario']) ?>, es la primera vez que te conectas</p>
-                <?php
-            }
-            break;
-
-        case 'en':
-            if ($avInicioPrivado['numConexiones'] > 0) {
-                ?>
-                    <p>Welcome <?php echo($avInicioPrivado['descUsuario']) ?>, this is the  <?php echo $avInicioPrivado['numConexiones'] + 1 ?> you log in;
-                    the last time you logged in was the: <?php echo date_format(new DateTime($avInicioPrivado['fechaHoraUltimaConexionAnterior']), "d/m/Y H:i:s") ?></p>
-                <?php
-                } else {
-                ?>
-                    <p>Welcome <?php echo($avInicioPrivado['descUsuario']) ?>, this is the first time you log in</p>
-                <?php
-            }
-            break;
-        }             
-    ?>
+                    ?>
+                        <p>Welcome <?php echo($avInicioPrivado['descUsuario']) ?>, this is the  <?php echo $avInicioPrivado['numConexiones'] + 1 ?> you log in;
+                        the last time you logged in was the: <?php echo date_format(new DateTime($avInicioPrivado['fechaHoraUltimaConexionAnterior']), "d/m/Y H:i:s") ?></p>
+                    <?php
+                    } else {
+                    ?>
+                        <p>Welcome <?php echo($avInicioPrivado['descUsuario']) ?>, this is the first time you log in</p>
+                    <?php
+                }
+                break;
+            }             
+        ?>
+    </div>
 </main>

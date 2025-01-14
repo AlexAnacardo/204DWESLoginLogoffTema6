@@ -40,8 +40,10 @@ h1{
  body{                              
     display: flex;
     flex-direction: column;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;                
-    height: 100%;     
+    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;                     
+    min-height: 100%;
+    height: 100%;
     width: 100%;
 }
 
@@ -50,7 +52,7 @@ footer{
     flex-direction: row;                 
     justify-content: center;
     background-color: #232F3E;
-    font-size: 140%;       
+    font-size: 140%;
 }
 
 
@@ -218,7 +220,38 @@ footer p:hover{
     }
 }
 
-
+#headerPrograma{
+    p{
+        color: white;        
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 4%;
+        
+    }
+    h1{
+        width: 15%;
+        margin-left: 40%;
+        
+    }
+    img{
+        height: 35px;
+        width: 60px;       
+    }
+    
+    #zonaUsuario{
+        margin-left: 10%;
+    }
+    #logo{
+        position: absolute;    
+        border-radius: 10px;
+        left: 5%; 
+        top: 5%;
+        width: 8%;
+        height: 8%;
+    }
+}
 
 #headerPrograma form{
     height: 100%;
@@ -226,8 +259,8 @@ footer p:hover{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-right: 3%;
-    
+    margin-right: 3%;    
+        
     input{
         border: none;
         background-color: #131921;
@@ -247,7 +280,7 @@ footer p:hover{
     height: 110%;      
     align-items: center;    
     border-radius: 9%;    
-    width: 100%;  
+    width: 100%;      
 }
 
 #programa p{
@@ -260,10 +293,32 @@ footer p:hover{
     box-shadow: 10px 10px 10px 10px #888888;
 }
 
+#programa div{
+    width: 100%;
+    margin-top: -20%;
+}
+
+#programa form{       
+    margin: 0 auto;
+    margin-top: -10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    input{        
+        background-color: #FFD814; 
+        border: none;
+        padding: 0.5%;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+    input:hover{
+        background-color: #F7CA00;
+    }
+}
 
 /*------Detalle------*/
 
-#detalle header{    
+#headerDetalle{        
     p{
         color: white;        
         width: 20%;
@@ -292,38 +347,24 @@ footer p:hover{
     }
 }
 
-#detalle form{    
-    display: flex;
-    justify-content: space-around;
-    margin-left: 5%;
-    input{
-        border: none;
-        background-color: #131921;
-        color: white;
-        font-size: 110%;
-    }
-    input:hover{
-        color: #c97923;
-        text-decoration: underline;
-    }
+
+#detalle div p{
+    text-align: center;
+    margin: 0.3% 0;
 }
 
-#detalle table{
+#detalle div table{
     margin: 0 auto;
-    margin-bottom: 2%;
+    margin-bottom: 1.5%;
     width: 60%;
 }
 
-#detalle table, #detalle td, #detalle tr{
+#detalle div table, #detalle div td, #detalle div tr{
     border: 1px solid black;
     border-collapse: collapse;
 }
-#detalle td:nth-of-type(odd){
+#detalle div td:nth-of-type(odd){
     background-color: #E3E6E6;
     font-weight: bold;
 }
 
-#detalle main p{
-    width: fit-content;
-    margin: 0 auto;
-}

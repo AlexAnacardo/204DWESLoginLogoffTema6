@@ -6,6 +6,24 @@
     //Iniciamos la sesion
     session_start();
     
+    $oFechaActual=new DateTime("now");
+    
+    if(!isset($_COOKIE['Idioma']) && isset($_SESSION['paginaEnCurso'])){        
+        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");         
+        header('location:indexLoginLogoffTema6.php');
+             
+    }
+             
+    if(isset($_REQUEST['español'])){        
+        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");        
+        header('location:indexLoginLogoffTema6.php');
+    }
+    
+    if(isset($_REQUEST['ingles'])){       
+       setcookie('Idioma', 'en', $oFechaActual->getTimestamp()+(3600), "/");      
+       header('location:indexLoginLogoffTema6.php');       
+    }
+    
     if(!isset($_SESSION['paginaEnCurso'])){
         $_SESSION['paginaEnCurso'] = 'inicioPublico';
     }

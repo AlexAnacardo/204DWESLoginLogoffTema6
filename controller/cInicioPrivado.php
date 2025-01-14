@@ -4,38 +4,22 @@
      * @author Alex Asensio Sanchez                          
      */
     $oUsuarioEnCurso=$_SESSION["usuarioDAW204LoginLogoffTema6"];
-    $oFechaActual=new DateTime("now");
     
-    
-    if(!isset($_COOKIE['Idioma']) && isset($_SESSION['paginaEnCurso'])){        
-        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/"); 
-        $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-        header('location:indexLoginLogoffTema6.php');
-             
-    }
-             
-    if(isset($_REQUEST['español'])){        
-        setcookie('Idioma', 'es', $oFechaActual->getTimestamp()+(3600), "/");
-        $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-        header('location:indexLoginLogoffTema6.php');
-    }
-    
-    if(isset($_REQUEST['ingles'])){       
-       setcookie('Idioma', 'en', $oFechaActual->getTimestamp()+(3600), "/");
-       $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-       header('location:indexLoginLogoffTema6.php');       
-    }
     /*
     if(!isset($_SESSION["usuarioDAW204LoginLogoffTema6"])){
         header('location:login.php');
         exit;
     }
-    
-    if(isset($_REQUEST['detalle'])){
-       header('location:detalle.php');
-       exit;
-    }
     */
+    if(isset($_REQUEST['detalle'])){
+       $_SESSION['paginaEnCurso'] = 'detalle';
+        header('Location: indexLoginLogoffTema6.php');
+        exit(); 
+    }
+     
+    if(isset($_REQUEST['error'])){              
+       crear nuevo obj error y usar clases cError vError y ErrorApp
+    }
     
     if(isset($_REQUEST['logoff'])){
        session_destroy();       
