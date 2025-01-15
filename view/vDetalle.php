@@ -1,7 +1,7 @@
 <header id="headerDetalle">
     <img id="logo" src="webroot/images/logo.png">
     <h1>Detalle</h1>
-    <p><img src="webroot/images/LogoUsuario.png"><?php echo($oUsuarioEnCurso->getDescUsuario()); ?></p>
+    <p id="zonaUsuario"><input type="image" id="perfilUser" name="perfilUser" src="webroot/images/LogoUsuario.png"><?php echo($oUsuarioEnCurso->getDescUsuario()); ?></p>
     <form method='post'>
         <input type="submit" name='volver' id='volver' value='Volver'>               
     </form>

@@ -8,5 +8,11 @@ if(isset($_REQUEST['volver'])){
     exit();             
 }
 
+if(isset($_REQUEST['perfilUser'])){
+        $_SESSION['paginaEnCurso'] = 'wip';
+        header('Location: indexLoginLogoffTema6.php');
+        exit();
+}
+
 require_once $view['layout'];
 ?>

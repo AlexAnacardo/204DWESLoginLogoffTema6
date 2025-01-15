@@ -1,11 +1,8 @@
 <header id="headerPrograma">
     <img id="logo" src="webroot/images/logo.png">
-    <h1>Bienvenido</h1>
-    <p id="zonaUsuario"><img src="webroot/images/LogoUsuario.png"><?php echo($oUsuarioEnCurso->getDescUsuario()); ?></p>
-    
-                       
-    
-    <form method='post'>                                                
+    <h1>Bienvenido</h1>                
+    <form method='post'>             
+        <p id="zonaUsuario"><input type="image" id="perfilUser" name="perfilUser" src="webroot/images/LogoUsuario.png"><?php echo($oUsuarioEnCurso->getDescUsuario()); ?></p>
         <div class='dropdown'>
             <?php
             $imagenIdioma = '';
@@ -31,8 +28,7 @@
                     <img src="webroot/images/uk.png" style="width: 40px; height: 20px">
                 </button>                        
             </div>
-        </div>
-        <input type="submit" name='volver' id='volver' value='Volver'>
+        </div>        
         <input type="submit" name='logoff' id='logoff' value='Cerrar sesion'>        
     </form>
 </header>
@@ -40,7 +36,8 @@
     <form>
         <input type="submit" name='detalle' id='detalle' value='Detalle'>
         <input type="submit" name='error' id='error' value='Error'>
-        <input type="submit" name='wip' id='wip' value='Work in progress'>
+        <input type="submit" name='mantDep' id='mantDep' value='Mantenimiento departamentos'>
+        <input type="submit" name='rest' id='rest' value='REST'>
     </form>
     <div>
         <?php        

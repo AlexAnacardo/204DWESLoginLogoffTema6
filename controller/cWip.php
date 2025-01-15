@@ -1,9 +1,7 @@
 <?php
-    
-$oError=$_SESSION['error'];
 
 if(isset($_REQUEST['volver'])){
-    $_SESSION['paginaEnCurso']=$oError->getPaginaSiguiente();
+    $_SESSION['paginaEnCurso']="inicioPrivado";
     header('Location: indexLoginLogoffTema6.php');
     exit();
 }

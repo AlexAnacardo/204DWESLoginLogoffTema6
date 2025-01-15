@@ -12,13 +12,31 @@
     }
     */
     if(isset($_REQUEST['detalle'])){
-       $_SESSION['paginaEnCurso'] = 'detalle';
+        $_SESSION['paginaEnCurso'] = 'detalle';
         header('Location: indexLoginLogoffTema6.php');
         exit(); 
     }
      
     if(isset($_REQUEST['error'])){              
-       crear nuevo obj error y usar clases cError vError y ErrorApp
+        DBPDO::ejecutaConsulta("Esto va a dar un error que flipas");
+    }
+    
+    if(isset($_REQUEST['mantDep'])){
+        $_SESSION['paginaEnCurso'] = 'wip';
+        header('Location: indexLoginLogoffTema6.php');
+        exit();
+    }
+    
+    if(isset($_REQUEST['rest'])){
+        $_SESSION['paginaEnCurso'] = 'wip';
+        header('Location: indexLoginLogoffTema6.php');
+        exit();
+    }
+    
+    if(isset($_REQUEST['perfilUser'])){
+        $_SESSION['paginaEnCurso'] = 'wip';
+        header('Location: indexLoginLogoffTema6.php');
+        exit();
     }
     
     if(isset($_REQUEST['logoff'])){

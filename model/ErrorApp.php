@@ -1,58 +1,59 @@
 <?php
     class ErrorApp{
-        private $codCuestion;
-        private $descCuestion;
-        private $numOrden;
-        private $tipoRespuesta;
-        private $listaopinionesCuestion;
+        private $codError;
+        private $descError;
+        private $archivoError;
+        private $lineaError;
+        private $paginaSiguiente;
         
-        public function __construct($codCuestion, $descCuestion, $numOrden, $tipoRespuesta, $listaopinionesCuestion) {
-            $this->codCuestion = $codCuestion;
-            $this->descCuestion = $descCuestion;
-            $this->numOrden = $numOrden;
-            $this->tipoRespuesta = $tipoRespuesta;
-            $this->listaopinionesCuestion = $listaopinionesCuestion;
+        public function __construct($codError, $descError, $archivoError, $lineaError, $paginaSiguiente) {
+            $this->codError = $codError;
+            $this->descError = $descError;
+            $this->archivoError = $archivoError;
+            $this->lineaError = $lineaError;
+            $this->paginaSiguiente = $paginaSiguiente;
+        }
+        
+        public function getCodError() {
+            return $this->codError;
         }
 
-        public function getCodCuestion() {
-            return $this->codCuestion;
+        public function getDescError() {
+            return $this->descError;
         }
 
-        public function getDescCuestion() {
-            return $this->descCuestion;
+        public function getArchivoError() {
+            return $this->archivoError;
         }
 
-        public function getNumOrden() {
-            return $this->numOrden;
+        public function getLineaError() {
+            return $this->lineaError;
         }
 
-        public function getTipoRespuesta() {
-            return $this->tipoRespuesta;
+        public function getPaginaSiguiente() {
+            return $this->paginaSiguiente;
         }
 
-        public function getListaopinionesCuestion() {
-            return $this->listaopinionesCuestion;
+        public function setCodError($codError): void {
+            $this->codError = $codError;
         }
 
-        public function setCodCuestion($codCuestion): void {
-            $this->codCuestion = $codCuestion;
+        public function setDescError($descError): void {
+            $this->descError = $descError;
         }
 
-        public function setDescCuestion($descCuestion): void {
-            $this->descCuestion = $descCuestion;
+        public function setArchivoError($archivoError): void {
+            $this->archivoError = $archivoError;
         }
 
-        public function setNumOrden($numOrden): void {
-            $this->numOrden = $numOrden;
+        public function setLineaError($lineaError): void {
+            $this->lineaError = $lineaError;
         }
 
-        public function setTipoRespuesta($tipoRespuesta): void {
-            $this->tipoRespuesta = $tipoRespuesta;
+        public function setPaginaSiguiente($paginaSiguiente): void {
+            $this->paginaSiguiente = $paginaSiguiente;
         }
 
-        public function setListaopinionesCuestion($listaopinionesCuestion): void {
-            $this->listaopinionesCuestion = $listaopinionesCuestion;
-        }
 
 
     }

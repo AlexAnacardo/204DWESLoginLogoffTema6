@@ -18,6 +18,7 @@ header{
     background-color: #131921; 
     display: flex;    
 }
+
 h1{
     text-align: center;
     font-size: 500%;
@@ -74,20 +75,26 @@ footer p:hover{
 }
 
 
-
-
-
-
 /*------indexLoginLogoffTema5------*/
 
 
-#index header form{
+header form{
     height: 100%;
-    width: 15%;    
+    width: 20%;    
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-left: 1%;
+    
+    #zonaUsuario{
+        width: 35%;       
+    }
+    
+    #perfilUser{
+        height: 35px;
+        width: 60px; 
+    }
+    
     input{
         border: none;
         background-color: #131921;
@@ -98,6 +105,16 @@ footer p:hover{
         color: #c97923;
         text-decoration: underline;
     }
+}
+
+#headerLogin form{
+    width: 10%;
+    margin-left: -2%;
+}
+
+#headerPrograma form{
+    width: 35%;
+    margin-left: 7%;
 }
 
 .dropdown{
@@ -198,32 +215,10 @@ footer p:hover{
 
 /*------Programa------*/
 
-#headerpPrograma{    
-    p{
-        color: white;        
-        width: 20%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    img{
-        height: 35px;
-        width: 60px;
-    }
-    #logo{
-        position: absolute;    
-        border-radius: 10px;
-        left: 5%; 
-        top: 5%;
-        width: 8%;
-        height: 8%;
-    }
-}
-
 #headerPrograma{
     p{
         color: white;        
-        width: 20%;
+        width: 30%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -235,14 +230,8 @@ footer p:hover{
         margin-left: 40%;
         
     }
-    img{
-        height: 35px;
-        width: 60px;       
-    }
     
-    #zonaUsuario{
-        margin-left: 10%;
-    }
+    
     #logo{
         position: absolute;    
         border-radius: 10px;
@@ -253,26 +242,7 @@ footer p:hover{
     }
 }
 
-#headerPrograma form{
-    height: 100%;
-    width: 14.7%;    
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: 3%;    
-        
-    input{
-        border: none;
-        background-color: #131921;
-        color: white;
-        font-size: 110%;
-        padding: 3px;
-    }
-    input:hover{
-        color: #c97923;
-        text-decoration: underline;
-    }
-}
+
 #programa{
     display: flex;
     flex-wrap: wrap;
@@ -333,7 +303,7 @@ footer p:hover{
         margin-left: 43%;
         
     }
-    img{
+    #perfilUser{
         height: 35px;
         width: 60px;       
     }
@@ -368,3 +338,69 @@ footer p:hover{
     font-weight: bold;
 }
 
+#headerError{
+    h1{
+        margin-left: 20%;
+    }
+}
+
+#error{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    form{
+        width: 100%;
+        height: 7%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #volver{
+        width: fit-content;
+        font-size: 150%;
+        padding: 0% 1%;
+        background-color: #FFD814; 
+        border: none;
+        
+        
+        border-radius: 10px;
+        box-shadow: none;
+    }
+    #volver:hover{
+        background-color: #F7CA00;
+    }
+}
+
+#wip{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+            
+    form{
+        margin-top: 5%;
+        width: 100%;
+        height: 7%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #volver{
+        width: fit-content;
+        font-size: 150%;
+        padding: 0% 1%;
+        background-color: #FFD814; 
+        border: none;
+        
+        
+        border-radius: 10px;
+        box-shadow: none;
+    }
+    #volver:hover{
+        background-color: #F7CA00;
+    }
+}
