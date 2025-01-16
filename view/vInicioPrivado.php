@@ -1,8 +1,8 @@
 <header id="headerPrograma">
     <img id="logo" src="webroot/images/logo.png">
     <h1>Bienvenido</h1>                
-    <form method='post'>             
-        <p id="zonaUsuario"><input type="image" id="perfilUser" name="perfilUser" src="webroot/images/LogoUsuario.png"><?php echo($oUsuarioEnCurso->getDescUsuario()); ?></p>
+    <form method='post'>                     
+        <p id="zonaUsuario"><button type="submit" id="perfilUser" name="perfilUser"><img src="webroot/images/LogoUsuario.png"></button><?php echo($oUsuarioEnCurso->getDescUsuario()); ?></p>
         <div class='dropdown'>
             <?php
             $imagenIdioma = '';

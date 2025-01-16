@@ -39,6 +39,7 @@
             <label for="passwd">Contraseña</label>
             <input type="password" name="passwd" id="passwd">
             <input type="submit" id="botonLogin" name="botonLogin" value="Login">
+            <input type="submit" id="botonRegistro" name="botonRegistro" value="Registrarse">
         </form>
     </div>
 </main>

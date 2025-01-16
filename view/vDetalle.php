@@ -1,8 +1,8 @@
 <header id="headerDetalle">
     <img id="logo" src="webroot/images/logo.png">
-    <h1>Detalle</h1>
-    <p id="zonaUsuario"><input type="image" id="perfilUser" name="perfilUser" src="webroot/images/LogoUsuario.png"><?php echo($oUsuarioEnCurso->getDescUsuario()); ?></p>
+    <h1>Detalle</h1>    
     <form method='post'>
+        <p id="zonaUsuario"><button type="submit" id="perfilUser" name="perfilUser"><img src="webroot/images/LogoUsuario.png"></button><span><?php echo($oUsuarioEnCurso->getDescUsuario()); ?></span></p>
         <input type="submit" name='volver' id='volver' value='Volver'>               
     </form>
 </header>  

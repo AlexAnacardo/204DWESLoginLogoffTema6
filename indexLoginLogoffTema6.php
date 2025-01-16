@@ -26,6 +26,7 @@
     
     if(!isset($_SESSION['paginaEnCurso'])){
         $_SESSION['paginaEnCurso'] = 'inicioPublico';
+        $_SESSION['paginaAnterior'] = 'inicioPublico';
     }
     
     require_once $controller[$_SESSION['paginaEnCurso']];
