@@ -5,7 +5,7 @@ create table T01_Usuario(
     T01_NumConexiones int,
     T01_FechaHoraUltimaConexion datetime,
     T01_Perfil varchar(100),
-    T01_ImagenUsuario varchar(200)    
+    T01_ImagenUsuario blob    
 )engine=innodb;
 
 

@@ -44,7 +44,7 @@
             <p><a href="../204DWESProyectoDWES/indexProyectoDWES.php">DWES</a></p>
             <p><a target="blank" href="https://github.com/AlexAnacardo/204DWESLoginLogoffTema6.git">Repositorio del proyecto</a></p>
             <p><a target="blank" href="https://www.amazon.es">Pagina imitada</a></p>
-            <p><a target="vlank" href="doc/phpdoc/index.html">Documentación del proyecto</a></p>
+            <p><a target="vlank" href="doc/phpdoc/index.html">Documentación (PhpDoc)</a></p>
         </footer>
      </body>
  </html>

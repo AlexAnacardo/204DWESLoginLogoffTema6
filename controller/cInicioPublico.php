@@ -10,6 +10,8 @@
         exit();         
     }
     
+    
+    
     //Cargamos el layout
     require_once $view['layout'];    
 ?>
