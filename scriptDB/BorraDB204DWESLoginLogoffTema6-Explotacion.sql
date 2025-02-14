@@ -1,1 +1,1 @@
-drop database DB204DWESLoginLogoffTema5;
+drop database DB204DWES;

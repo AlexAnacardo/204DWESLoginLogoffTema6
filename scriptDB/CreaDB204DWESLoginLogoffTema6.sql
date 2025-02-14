@@ -1,14 +1,14 @@
-create database DB204DWESLoginLogoffTema6;
+create database if not exists DB204DWES;
 
-use DB204DWESLoginLogoffTema6;
+use DB204DWES;
 
 create user if not exists 'user204DWESLoginLogoffTema6'@'%' identified by 'paso';
 
-grant all privileges on DB204DWESLoginLogoffTema6.* to 'user204DWESLoginLogoffTema6'@'%';
+grant all privileges on DB204DWES.* to 'user204DWESLoginLogoffTema6'@'%';
 
 
 
-create table T01_Usuario(
+create table if not exists T01_Usuario(
     T01_CodUsuario varchar(40) primary key,
     T01_Password varchar(100),
     T01_DescUsuario varchar(300),
@@ -20,7 +20,7 @@ create table T01_Usuario(
 
 
 
-create table T02_Departamento(
+create table if not exists T02_Departamento(
     T02_CodDepartamento varchar(3) primary key,
     T02_DescDepartamento varchar(255),
     T02_FechaCreacionDepartamento datetime,
